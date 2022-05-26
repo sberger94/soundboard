@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Header, Segment, Image, Icon } from "semantic-ui-react";
+import { Header, Segment, Image, Icon, Grid } from "semantic-ui-react";
 import SoundBoard from "../../assets/SoundBoard.png"
 
 
@@ -10,7 +10,7 @@ export default function PageHeader({ user, handleLogout }) {
     <Segment clearing>
       <Header floated='left' image={SoundBoard}>
         <Link to='/'>
-          <Image src={SoundBoard} style={{maxWidth: 150}} centered />
+          <Image src={SoundBoard} style={{maxWidth: 100}} centered />
         </Link>
       </Header>
       <Header as='h2' floated='right'>
@@ -27,7 +27,7 @@ export default function PageHeader({ user, handleLogout }) {
             avatar
           ></Image>{user.username}
         </Link>
-      </Header>
+      </Header>  
     </Segment>
   )
 }
