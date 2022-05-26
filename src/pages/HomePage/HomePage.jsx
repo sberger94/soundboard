@@ -1,11 +1,19 @@
 import React from "react";
 
-function HomePage(props){
+import PageHeader from "../../components/Header/Header";
+
+import { Grid } from "semantic-ui-react";
+
+function HomePage({user, handleLogout}){
 
     return(
-        <>
-          <h1>Welcome Home</h1>
-        </>
+      <Grid centered>
+        <Grid.Row>
+          <Grid.Column>
+            <PageHeader handleLogout={handleLogout} user={user} />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
     )
 }
 
