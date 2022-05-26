@@ -12,8 +12,10 @@ function HomePage({user, handleLogout}){
   const [recs, setRecs] = useState([]);
 
   async function handleAddRec(rec){
+    console.log(rec)
     const data = await recsAPI.create(rec);
-    console.log(data, '<- data from recsAPI')
+    console.log(data.rec, '<-- data.rec', data, '<- data from recsAPI')
+    setRecs(recs => [data.rec, ...recs])
   }
 
     return(

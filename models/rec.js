@@ -7,4 +7,4 @@ const recSchema = new mongoose.Schema({
     description: String
 })
 
-module.exports = mogoose.model('Rec', recSchema)
+module.exports = mongoose.model('Rec', recSchema)
