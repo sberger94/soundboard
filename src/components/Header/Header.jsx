@@ -1,14 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Header, Segment, Image, Icon } from "semantic-ui-react";
+import SoundBoard from "../../assets/SoundBoard.png"
+
 
 export default function PageHeader({ user, handleLogout }) {
     console.log(user, '<- user in header')
   return(
     <Segment clearing>
-      <Header as='h2' textAlign='center' >
+      <Header floated='left' image={SoundBoard}>
         <Link to='/'>
-          <Icon name='home' />
+          <Image src={SoundBoard} style={{maxWidth: 150}} centered />
         </Link>
       </Header>
       <Header as='h2' floated='right'>
@@ -16,7 +18,7 @@ export default function PageHeader({ user, handleLogout }) {
           Logout
         </Link>
       </Header>
-      <Header as='h2'  floated='left'>
+      <Header as='h2'  floated='right'>
         <Link to={`/${user?.username}`}>
           <Image
             src={

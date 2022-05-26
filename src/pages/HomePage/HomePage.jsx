@@ -1,6 +1,7 @@
 import React from "react";
 
 import PageHeader from "../../components/Header/Header";
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 
 import { Grid } from "semantic-ui-react";
 
