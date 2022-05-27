@@ -38,6 +38,7 @@ function signup(req, res) {
       const token = createJWT(user); // user is the payload so this is the object in our jwt
       res.json({ token });
     } catch (err) {
+      console.log(err, '<--- err')
       // Probably a duplicate email
       res.status(400).json(err);
     }

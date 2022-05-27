@@ -22,6 +22,9 @@ SoundBoard is a MERN stack social media application for sharing music. Users can
 
 ## Getting Started
 
+[CLICK HERE](https://sei-soundboard.herokuapp.com/) to get started with SoundBoard! 
 
+This project was planned out using [Trello](https://trello.com/b/zSubvQSi/soundboard)
 
 ## Next Steps
+
