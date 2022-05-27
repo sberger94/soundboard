@@ -4,6 +4,7 @@ import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import { Button, Form, Grid, Header, Icon, Image, Message, Segment } from 'semantic-ui-react'
 import userService from "../../utils/userService";
 import { useNavigate, Link } from "react-router-dom";
+import SoundBoard from "../../assets/SoundBoard.png"
 
 export default function LoginPage(props) {
 
@@ -40,8 +41,8 @@ export default function LoginPage(props) {
   return (
     <Grid textAlign="center" verticalAlign="middle" style={{ height: "100vh" }}>
       <Grid.Column style={{ maxWidth: 500 }}>
+        <Image src={SoundBoard} size="small" centered/>
         <Header as='h2' icon>
-          <Icon name='user circle' />
           <Header.Content>Log in to SoundBoard</Header.Content>
         </Header>
         <Form autoComplete="off" onSubmit={handleSubmit}>

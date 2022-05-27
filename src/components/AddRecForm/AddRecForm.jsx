@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Form, Grid, Header, Image, Segment } from "semantic-ui-react";
+import { Button, Form, Grid, Header, Segment } from "semantic-ui-react";
 
 export default function AddRecForm(props){
 
@@ -36,6 +36,9 @@ export default function AddRecForm(props){
     <Grid textAlign="center" verticalAlign="middle">
       <Grid.Column style={{ maxWidth: 500 }}>
         <Segment>
+        <Header>
+          Upload a Song!
+        </Header>
           <Form autoComplete="off" onSubmit={handleSubmit}>
             <Form.Input 
               name="title"

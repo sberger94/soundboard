@@ -1,37 +1,27 @@
-## Setup 
+# SoundBoard
 
-1. Clone the repo
-2. Rename the folder to your Project, you can use the `mv` command like `mv mern-boilerplate yourprojectname`
-3. Delete the `.git` file, when you are in the root of the file, you can press `ls` and you should see a `.git` file, then go ahead and run `rm -rf .git`
+SoundBoard is a MERN stack social media application for sharing music. Users can listen to and share audio recordings.
+
+## Screenshots
+
+![login](src/assets/login-screen.png)
+![home page](src/assets/home-screen.png)
+![profile page](src/assets/profile-page.png)
+
+## Technologies Used
+
+**MongoDB** - MongoDB is used to hold user and post data on the backend of the application.
+
+**Express** - Express is the Node framework that allows for the use of middleware functions in order to send user data, auth info, and post data between MongoDB and React.
+
+**React** - React is the frontend library that renders the whole application as a single page. The single page functionality of React allows for a smooth UI when moving from one 'page' to another, as the application is not being re-rendered every time.
+
+**Node**
+
+**AWS S3**
+
+## Getting Started
 
 
-#### Setup your git repo
 
-1. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
-2. Then you can run the following commands in the root of your project 
-
-```
-git init
-git add .
-git commit -m "first commit"
-git remote add origin git@git.generalassemb.ly:SEI-CC/test.git // this will be whatever your address will be, look at the address in the code github gives you!
-git push -u origin main
-```
-
-#### Setup the App
-
-```npm install```
-
-*DOTENV*
-
-`touch .env`
-
-add your variables
-
-```
-DATABASE_URL=mongodb://localhost:27017/testagramV2
-BUCKET_NAME=catcollectorone
-SECRET=mysecretforjwt
-```
-
-The app is configured, to use those respective key names for the database, jwt secret and aws bucket, of course you'll have your own values
+## Next Steps
