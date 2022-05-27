@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import ReactAudioPlayer from "react-audio-player";
 import { Card, Image, Icon } from "semantic-ui-react";
 
-function RecCard({ rec, isProfile, user }) {
+function RecCard({ rec, removeLike, addLike, user }) {
+
+  const liked = rec.likes.findIndex(like => like.username === user.username);
+  const clickHandler = liked > -1 ? () => removeLike(rec.likes[liked]._id) : () => addLike(rec._id);
+  const likeColor = liked > -1 ? 'orange' : 'grey'
 
   return (
     <Card key={rec._id} fluid>
@@ -19,7 +23,7 @@ function RecCard({ rec, isProfile, user }) {
         <ReactAudioPlayer src={rec.audioUrl} controls />
       </Card.Content>
       <Card.Content extra textAlign={"left"}>
-        <Icon name={"heart"} size="large" color={"grey"} />
+        <Icon name={"heart"} size="large" color={likeColor} onClick={clickHandler} />
         {rec.likes.length} Users like this song
       </Card.Content>
     </Card>

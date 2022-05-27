@@ -5,6 +5,7 @@ import AddRecForm from "../../components/AddRecForm/AddRecForm";
 import RecFeed from "../../components/RecFeed/RecFeed";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import * as recsAPI from "../../utils/recApi";
+import * as likesAPI from "../../utils/likesApi";
 
 import { Grid } from "semantic-ui-react";
 
@@ -38,6 +39,25 @@ function HomePage({user, handleLogout}){
     getRecs();
   }, []);
 
+  async function addLike(recId){
+    try {
+      const data = await likesAPI.create(recId);
+      console.log(data, '<- data from addLike')
+      getRecs();
+    } catch(err) {
+      console.log(err)
+    }
+  } 
+
+  async function removeLike(likeId){
+    try {
+      const data = await likesAPI.removeLike(likeId);
+      getRecs();
+    } catch(err) {
+      console.log(err)
+    }
+  }
+
     return(
       <Grid centered verticalAlign="middle">
         <Grid.Row>
@@ -54,6 +74,8 @@ function HomePage({user, handleLogout}){
           <Grid.Column style={{ maxWidth: 500}}>
             <RecFeed
               recs={recs}
+              addLike={addLike}
+              removeLike={removeLike}
               user={user}
             />
           </Grid.Column>
