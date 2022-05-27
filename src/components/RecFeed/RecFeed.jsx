@@ -5,7 +5,7 @@ import RecCard from "../RecCard/RecCard";
 export default function RecFeed({ recs, isProfile, user }){
 
   return (
-    <Card.Group>
+    <Card.Group style={{ maxWidth: 500 }} centered>
       {recs.map((rec) => {
         return (
           <RecCard
