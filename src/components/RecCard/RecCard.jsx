@@ -22,6 +22,7 @@ function RecCard({ rec, removeLike, addLike, user }) {
       <Card.Content textAlign="center">
         <ReactAudioPlayer src={rec.audioUrl} controls />
       </Card.Content>
+      <Card.Content extra>{rec.description ? rec.description : null}</Card.Content>
       <Card.Content extra textAlign={"left"}>
         <Icon name={"heart"} size="large" color={likeColor} onClick={clickHandler} />
         {rec.likes.length} Users like this song

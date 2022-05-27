@@ -50,19 +50,19 @@ export default function ProfilePage(props){
   }
 
   return(
-    <Grid>
+    <Grid centered>
       <Grid.Row>
         <Grid.Column>
           <PageHeader handleLogout={props.handleLogout} user={props.user}/>
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>
-        <Grid.Column>
+        <Grid.Column style={{ maxWidth: 600}}>
           <ProfileInfo user={user}/>
         </Grid.Column>
       </Grid.Row>
-      <Grid.Row centered>
-        <Grid.Column>
+      <Grid.Row >
+        <Grid.Column style={{ maxWidth: 500}}>
           <RecFeed
             recs={recs}
             user={props.user}

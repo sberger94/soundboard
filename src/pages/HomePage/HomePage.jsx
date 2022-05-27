@@ -66,7 +66,7 @@ function HomePage({user, handleLogout}){
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column style={{ maxWidth: 500}}>
+          <Grid.Column style={{ maxWidth: 600}}>
             <AddRecForm handleAddRec={handleAddRec}/>
           </Grid.Column>
         </Grid.Row>

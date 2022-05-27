@@ -28,8 +28,8 @@ export default function AddRecForm(props){
     for (let fieldName in state){
       console.log(fieldName, state[fieldName])
       formData.append(fieldName, state[fieldName])
-      props.handleAddRec(formData);
     }
+    props.handleAddRec(formData);
   }
 
   return (
