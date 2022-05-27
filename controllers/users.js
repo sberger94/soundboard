@@ -1,14 +1,17 @@
 const User = require("../models/user");
+const Rec = require("../models/rec");
 const jwt = require("jsonwebtoken");
 const SECRET = process.env.SECRET;
 const { v4: uuidv4 } = require("uuid");
 const S3 = require("aws-sdk/clients/s3");
+// const { post } = require("../routes/api/users");
 const s3 = new S3(); // initialize the construcotr
 // now s3 can crud on our s3 buckets
 
 module.exports = {
   signup,
   login,
+  profile
 };
 
 function signup(req, res) {
@@ -58,6 +61,18 @@ async function login(req, res) {
     });
   } catch (err) {
     return res.status(401).json(err);
+  }
+}
+
+async function profile(req, res) {
+  try {
+    const user = await User.findOne({username: req.params.username})
+    if(!user) return res.status(404).json({err: 'User not found'})
+    const recs = await Rec.find({user: user._id}).populate("user").exec();
+    console.log(recs, ' <- recs from userCtrl profile')
+    res.status(200).json({recs: recs, user: user});
+  } catch(err) {
+    res.status(400).json({err})
   }
 }
 
